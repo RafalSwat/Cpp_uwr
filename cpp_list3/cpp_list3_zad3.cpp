@@ -28,7 +28,7 @@ int main()
 	std::cin >> n;
 	if (!(n > 0 && n <= 10))
 		return -1;
-	allocate(&tab, n);
+	allocate(tab, n); // w orginalnym kodzie tab bylo podane przez referencje&
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -36,4 +36,6 @@ int main()
 		std::cout << "\n";
 	}
 	free(tab, n);
+	system("pause");
+	return 0;
 }
