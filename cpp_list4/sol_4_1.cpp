@@ -17,18 +17,22 @@ double &operator*(std::vector<double>& v, std::vector<double>& w)
 		throw std::runtime_error("Can't add two vectors of different sizes!");
 	}
 	double product = 0;
-	//for (std::vector<double>::iterator it = v.begin(); it != v.end(); it++)
-	for (size_t i = 0; i < 3; i++)
+	for (std::vector<double>::iterator it = v.begin(); it != v.end(); it++)
 	{
-		product += (v[i] * w[i]);
+		product += (v[*it] * w[*it]);
 	}
 	return product;
 }
 std::vector<double> fill_vector(std::vector<double>& vector)
 {
+	size_t size;
 	double extender;
+	std::cout << "how many elements in vector?: ";
+	std::cin >> size;
+	std::cout << std::endl;
+	
 	std::cout << "fill up vector: " << std::endl;
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < size; i++)
 	{
 		std::cin >> extender;
 		vector.push_back(extender);
